@@ -1,0 +1,29 @@
+RANSOMWARE DECRYPTION PROCEDURE (STEP-BY-STEP)
+
+1. CONFIGURATION
+   - Define the directory to decrypt.
+   - Specify:
+     • Key file name (used to load the decryption key)
+     • Locked file extension (".locked")
+     • Optional ransom note filename (e.g., "READ_ME.html")
+
+2. LOAD DECRYPTION KEY
+   - Read the Fernet key from "key.txt".
+
+3. DECRYPT FILE
+   - Read the encrypted (.locked) file content.
+   - Decrypt using Fernet with the loaded key.
+   - Restore the original filename by removing ".locked".
+   - Save decrypted data and delete the encrypted file.
+
+4. WALK AND DECRYPT DIRECTORY TREE
+   - Recursively scan the target directory.
+   - For each file with ".locked" extension:
+     • Decrypt and restore it.
+   - Optionally delete ransom notes ("READ_ME.html") after decrypting files.
+
+5. MAIN FUNCTION
+   - Load the decryption key.
+   - Initialize Fernet with the key.
+   - Decrypt all encrypted files in the target directory.
+   - Print confirmation after process completes.

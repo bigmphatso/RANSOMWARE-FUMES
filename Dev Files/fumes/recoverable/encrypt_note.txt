@@ -1,0 +1,38 @@
+RANSOMWARE PROCEDURE (STEP-BY-STEP)
+
+1. CONFIGURATION
+   - Define the target directory to encrypt.
+   - Set constants for:
+     • Key file name
+     • Ransom note filename
+     • Encrypted file extension
+
+2. GENERATE ENCRYPTION KEY
+   - Use Fernet to create a symmetric key.
+   - Save the key to a file ("key.txt").
+
+3. CREATE NON-VERIFIABLE RANSOM ID
+   - Generate a random 16-byte salt.
+   - Hash the salt + key with SHA-256 to produce a ransom ID.
+
+4. ENCRYPT FILE
+   - Open and read a file in binary.
+   - Encrypt the content using Fernet.
+   - Write the encrypted data to a new file with ".locked" extension.
+   - Delete the original file.
+
+5. ENCRYPT DIRECTORY TREE
+   - Recursively walk through the target directory.
+   - For each file:
+     • Skip key file, ransom note, already encrypted, or certain extensions (e.g., .py, .exe, .jpg).
+     • Encrypt valid files.
+   - Track directories containing encrypted files.
+
+6. DROP RANSOM NOTE
+   - Generate an HTML ransom note with payment instructions and ransom ID.
+   - Drop the note in each directory that contains encrypted files.
+
+7. MAIN FUNCTION
+   - Generate key and ransom ID.
+   - Encrypt files and collect affected directories.
+   - Drop ransom notes in those directories.

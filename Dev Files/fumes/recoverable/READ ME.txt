@@ -1,0 +1,11 @@
+Use a code editor e.g VS code - click RUN button
+
+Or 
+
+Via cmd 
+
+Change directory to 'Ransomwares\Dev Files\fumes\recoverable' 
+
+1. To the encrypt file: python fumes_e.py
+
+2. To the dencrypt file: python fumes_d.py

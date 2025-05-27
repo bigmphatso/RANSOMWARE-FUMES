@@ -1,0 +1,6 @@
+A ransomware that locks files in the directory and all sub directories (it is in) e.g Test Folder & all its subs
+
+*(The rasonmware file  disguised as a jpg file)
+Using the generated key encrypt the files and create a simple HTML website with the info to send ransom.
+
+Note: This is for an assignment.

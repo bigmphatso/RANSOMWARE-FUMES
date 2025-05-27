@@ -1,0 +1,43 @@
+UNRECOVERABLE RANSOMWARE PROCEDURE (STEP-BY-STEP)
+
+1. CONFIGURATION
+   - Set target directory to destroy files in.
+   - Define:
+     • Locked file extension (".locked")
+     • Extensions to skip (e.g., .py, .exe, .jpg)
+     • Ransom note filename
+     • Fake BTC address and contact email
+
+2. OVERWRITE FILE WITH GARBAGE
+   - For each target file:
+     • Determine its size
+     • Overwrite it with random binary data using os.urandom
+     • This action is irreversible—original data is lost
+
+3. RENAME FILE TO LOOK "ENCRYPTED"
+   - After overwriting, rename the file by appending ".locked"
+   - Simulates encryption even though the file is already destroyed
+
+4. DESTROY FILES IN TARGET DIRECTORY
+   - Recursively scan through the target directory
+   - Skip files with:
+     • Locked extension
+     • Ransom note name
+     • Specific extensions (e.g., .py, .exe, .jpg)
+   - Overwrite and rename valid files
+   - Track directories where files were affected
+
+5. DROP RANSOM NOTE
+   - For each affected directory:
+     • Generate a realistic HTML ransom note
+     • Include BTC address, contact email, and 72-hour deadline
+     • Save the note as "READ_ME.html"
+
+6. SELF-DESTRUCT
+   - Script attempts to delete itself by:
+     • Overwriting its own file with random data
+     • Deleting itself after a brief pause
+
+7. MAIN FUNCTION
+   - Calls destroy, note drop, and self-destruct in sequence
+   - No recovery possible; this is a file destruction routine disguised as ransomware
